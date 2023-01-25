@@ -54,7 +54,7 @@ int print_octal(va_list types, char buffer[],
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
 
-	UNUSED(width);
+	UNSED(width);
 
 	num = convert_size_unsgnd(num, size);
 
@@ -133,7 +133,7 @@ int print_hexa(va_list types, char map_to[], char buffer[],
 	unsigned long int num = va_arg(types, unsigned long int);
 	unsigned long int init_num = num;
 
-	UNUSED(width);
+	UNSED(width);
 
 	num = convert_size_unsgnd(num, size);
 
