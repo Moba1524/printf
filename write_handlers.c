@@ -161,7 +161,7 @@ int write_unsgnd(int is_negative, int ind,
 	UNUSED(size);
 
 	if (precision == 0 && ind ==  BUFF_SIZE - 2 && buffer[ind] == '0')
-		return (0); /* printf(".d", 0) no char is printed */
+		return (0); /* printf(".0d", 0) no char is printed */
 
 	if (precision > 0 && precision < length)
 		padd = ' ';
@@ -196,11 +196,11 @@ int write_unsgnd(int is_negative, int ind,
 }
 
 /**
- * write_pointer - write a emory address
+ * write_pointer - write a memory address
  * @buffer: Arrays of chars
  * @ind: Index at which the number starts in the buffer
  * @length: Length of number
- * @width: Flags specifier
+ * @width: Width specifier
  * @flags: Flags specifier
  * @padd: Char representing the padding
  * @extra_c: Char representing extra char
@@ -218,7 +218,7 @@ int write_pointer(char buffer[], int ind, int length,
 		for (i = 3; i < width - length + 3; i++)
 			buffer[i] = padd;
 		buffer[i] = '\0';
-		if (flags & F_MINUS && padd == ' ')/* Asign extra char to lift of buffer */
+		if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
 		{
 			buffer[--ind] = 'x';
 			buffer[--ind] = '0';
